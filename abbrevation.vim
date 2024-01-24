@@ -21,9 +21,9 @@ cabbrev evg EV git blame %
 cabbrev svnb EV svn blame --verbose %
 
 
-cabbrev pb set mp=cd\ ~/cosmos/coscore/build\ &&\ make\ -j10\ $*
-cabbrev kb set mp=cd\ ~/cosmos/coskit/build\ &&\ make\ -j10\ $*
-cabbrev eb set mp=cd\ ~/cosmos/cosemea/build\ &&\ make\ -j10\ $*
+cabbrev pb set mp=cd\ ~/home/build\ &&\ make\ -j10\ $*
+cabbrev kb set mp=cd\ ~/home/kit/build\ &&\ make\ -j10\ $*
+cabbrev eb set mp=cd\ ~/home/emea/build\ &&\ make\ -j10\ $*
 
 cabbrev dbc DBSetOption dbname=config
 cabbrev dbs DBSetOption dbname=statics
@@ -31,6 +31,6 @@ cabbrev dbt DBSetOption dbname=timescale
 
 "cabbrev rc vnew | read !g++ -fpreprocessed -E %
 
-set mp=cd\ ~/cosmos/coscore/build\ &&\ make\ -j10\ $*
+set mp=cd\ ~/home/core/build\ &&\ make\ -j10\ $*
 
 cabbrev gtd Git difftool -y
