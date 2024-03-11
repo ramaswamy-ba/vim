@@ -9,12 +9,11 @@ function! s:ExecuteInshellv(command)
 	silent! execute 'silent %!'. command
 	silent! execute 'resize'
 	silent! redraw
-  silent! execute 'au Bufunload <buffer> execute bufwinnr ('. bufnr('#') . ') . ''wincmd w'''
-  silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInshellv(''' . command . ''')<CR>
-  echo 'shell command' . command. ' executed.'
+        silent! execute 'au Bufunload <buffer> execute bufwinnr ('. bufnr('#') . ') . ''wincmd w'''
+        silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInshellv(''' . command . ''')<CR>
+        echo 'shell command' . command. ' executed.'
 endfunction
 	
-
 command! -nargs=0 Make call Compile()
 function Compile()
 	silent! execute set mp=g++\ -std=c++1z\ -fconcepts\ -D_GLIBCXX_USE_CXX11_ABI=0\ -ggdb\ -I/opt/envs/3rdparty/include\ -L/opt/envs/3rdparty/lib\ -1gtest\ -lpthread -o\ %<\ %' 
