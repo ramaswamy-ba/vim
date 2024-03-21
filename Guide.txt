@@ -1,1 +1,4 @@
 https://vim.rtorr.com
+
+
+https://github.com/jumogehn/vimrc?tab=readme-ov-file -- coc lsp setup
