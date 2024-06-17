@@ -27,3 +27,12 @@ autocmd BufRead,BufNewFile *.proto set filetype=cpp
 autocmd FileType cpp set mps+=<:> "finding matching closing template bracket
 autocmd FileType c,cpp setlocal keywordprg=:Cppman
 au VimEnter * if &diff | set bg=dark | colorscheme habamax | else | colorscheme desert| endif
+
+set makeprg=/usr/local/opt/gcc/bin/g++\ -std=c++2a\ %\ -o\ %<
+set path=.,/usr/local/opt/gcc/include/c++/14,/usr/local/include,/usr/include
+
+source ~/.vim/function.vim
+source ~/.vim/abbrevation.vim
+source ~/.vim/maps.vim
+source ~/.vim/plugins.vim
+source ~/.vim/lsp_map.vim
