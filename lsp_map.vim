@@ -41,6 +41,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> K <plug>(lsp-hover)
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+   "use the C-x C-o to list members of objects
 
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
