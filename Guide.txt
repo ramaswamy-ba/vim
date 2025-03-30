@@ -5,3 +5,5 @@ https://github.com/jumogehn/vimrc?tab=readme-ov-file -- coc lsp setup
 https://github.com/prabirshrestha/vim-lsp  -- LSP setup guide
 
 LspDocumentDiagnostics -- List diagnostics info
+
+let g:lsp_document_highlight_enabled = 0 -- Disable diagnostics
