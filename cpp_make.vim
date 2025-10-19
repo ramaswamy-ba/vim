@@ -34,3 +34,6 @@ function! s:RunFunc(args) abort
     endif
     echo "Window " .main_win_buf
 endfunction
+
+nnoremap <leader>c :make<CR>
+nnoremap <leader>r :Run<CR>
