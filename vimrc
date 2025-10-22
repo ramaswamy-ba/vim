@@ -36,3 +36,14 @@ source ~/.vim/abbrevation.vim
 source ~/.vim/maps.vim
 source ~/.vim/plugins.vim
 source ~/.vim/lsp_map.vim
+
+ function! AddTemplateFromFile()
+     let template_path = expand('~/.vim/templates/cpp_template.cpp')
+     if getline(1) == '' && filereadable(template_path)
+         "execute '0r ' . template_path
+         silent execute '0r ' . fnameescape(template_path)
+         echo "Added"
+     endif
+ endfunction
+
+ autocmd BufNewFile *.cpp call AddTemplateFromFile()
