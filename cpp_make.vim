@@ -1,5 +1,27 @@
 source ~/.vim/run_vertical.vim
 
+function! ExecuteInshellv(command)
+     let command = join(map(split(a:command), 'fnameescape(v:val)'))
+     let winnr = bufwinnr('^' . command . '$')
+     if winnr < 0
+         execute 'botright vnew ' . fnameescape(command)
+     else
+         execute winnr . 'wincmd w'
+     endif
+
+     setlocal buftype=nofile bufhidden=wipe noswapfile nowrap number
+     silent execute '%! ' . command . ' 2>&1'
+     silent! execute 'resize'
+     silent! redraw
+
+     autocmd BufUnload <buffer> silent! execute "bwipeout"
+     silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInshellv(''' . command . ''')<CR>
+ endfunction
+
+ " Define the command with proper completion and argument handling
+ command! -complete=shellcmd -nargs=+ EV call ExecuteInshellv(<q-args>)
+"""""""""""""""""
+
 command! -nargs=0 Make call Compile()
 function Compile()
     let main_win_buf = bufwinnr(expand("%:p:t"))
